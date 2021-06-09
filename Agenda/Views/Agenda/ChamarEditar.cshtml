@@ -1,0 +1,19 @@
+﻿
+@{
+    <div>
+        <form method="post" action="/agenda/Editar">
+
+            <label> Nome </label>
+            <input type="text" value=" " placeholder="Digite nome do novo contato" name="nome" />
+
+            <label> Número </label>
+            <input type="text" value=" " placeholder="Digite o número do novo contato" name="numero" />
+
+            <input type="hidden" value="@ViewData["valor"]" name="id">
+            <input type="submit" value="Editar" />
+        </form>
+    </div>
+}
+
+
+

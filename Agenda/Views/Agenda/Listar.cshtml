@@ -1,0 +1,29 @@
+﻿@{ 
+    List<Contato> contatos = ViewBag.Contatos;
+}
+
+<div>
+    @{
+        foreach (var contato in contatos)
+        {
+        <div>Nome: @contato.Nome - Numero: @contato.Telefone 
+
+            <form method="get" action="/Agenda/Deletar"> 
+
+                <input type="hidden" value="@contato.Id" name="id"/> 
+                <input class="bg-danger" type="submit" value="deletar"/> 
+                
+            </form>
+            
+            <form method="get" action="/Agenda/ChamarEditar">
+
+                <input class="bg-danger" type="submit" value="Editar" />
+                <input type="hidden" value="@contato.Id" name="id" />
+                <input type="hidden" value="@contato.Nome" name="nome" />
+                <input type="hidden" value="@contato.Telefone" name="numero">
+            </form>
+        </div>
+        }
+    }
+
+</div>
